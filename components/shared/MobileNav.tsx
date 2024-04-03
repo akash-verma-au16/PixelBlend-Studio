@@ -33,10 +33,10 @@ const MobileNav = () => {
                 alt="menu"
                 width={32}
                 height={32}
-                className="cursor-pointer"
+                className="cursor-pointer" 
               />
             </SheetTrigger>
-            <SheetContent className="sheet-content sm:w-64">
+            <SheetContent className="sheet-content bg-[#0D1117] sm:w-64 text-white">
               <>
                 <Image 
                   src="/assets/images/brand.svg"
@@ -45,35 +45,35 @@ const MobileNav = () => {
                   height={23}
                 />
 
-              <ul className="header-nav_elements">
-              {navLinks.map((link) => {
-                const isActive = link.route === pathname
+                <ul className="header-nav_elements">
+                  {navLinks.map((link) => {
+                    const isActive = link.route === pathname
 
-                return (
-                  <li 
-                    className={`${isActive && 'gradient-text'} p-18 flex whitespace-nowrap text-dark-700`}
-                    key={link.route}
-                    >
-                    <Link className="sidebar-link cursor-pointer" href={link.route}>
-                      <Image 
-                        src={link.icon}
-                        alt="logo"
-                        width={24}
-                        height={24}
-                      />
-                      {link.label}
-                    </Link>
-                  </li>
-                )
-              })}
-              </ul>
+                    return (
+                      <li 
+                        className={`${isActive ? 'text-white' : 'text-gray-500'} flex whitespace-nowrap`}
+                        key={link.route}
+                        >
+                        <Link className="sidebar-link cursor-pointer" href={link.route}>
+                          <Image 
+                            src={link.icon}
+                            alt="logo"
+                            width={24}
+                            height={24}
+                          />
+                          {link.label}
+                        </Link>
+                      </li>
+                    )
+                  })}
+                </ul>
               </>
             </SheetContent>
           </Sheet>
         </SignedIn>
 
         <SignedOut>
-            <Button asChild className="button bg-purple-gradient bg-cover">
+            <Button asChild className="button bg-purple-gradient bg-cover hover:brightness-150">
               <Link href="/sign-in">Login</Link>
             </Button>
           </SignedOut>

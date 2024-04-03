@@ -12,21 +12,22 @@ const Home = async ({ searchParams }: SearchParamProps) => {
 
   return (
     <>
-      <section className="home">
-        <h1 className="home-heading">
-          Transform Your Ideas into Masterpieces with PixelBlend Studio
+      <section className="home relative">
+        <div className="absolute w-full h-full backdrop-brightness-50 z-0"/>
+        <h1 className="home-heading z-10 brightness-125">
+          Powered by Cloudinary AI
         </h1>
-        <ul className="flex-center w-full gap-20">
+        <ul className="flex-center w-full gap-10 z-10 brightness-125">
           {navLinks.slice(1, 5).map((link) => (
             <Link
               key={link.route}
               href={link.route}
-              className="flex-center flex-col gap-2"
+              className="flex-center flex-col gap-2 hover:brightness-150"
             >
-              <li className="flex-center w-fit rounded-full bg-white p-4">
+              <li className="flex-center w-fit rounded-full bg-[#22244E] p-4">
                 <Image src={link.icon} alt="image" width={24} height={24} />
               </li>
-              <p className="p-14-medium text-center text-white">{link.label}</p>
+              <p className="p-14-medium text-center text-white text-semibold">{link.label}</p>
             </Link>
           ))}
         </ul>

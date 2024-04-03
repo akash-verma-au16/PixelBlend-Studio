@@ -4,8 +4,8 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222.2 84% 4.9%;
+    --background: rgb(13,17,23);
+    --foreground: rgb(22,27,34);
 
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -76,22 +76,22 @@
 }
 
 .auth {
-  @apply flex-center min-h-screen w-full bg-purple-100
+  @apply flex-center min-h-screen w-full bg-[#0D1117]
 }
 
 .root {
-  @apply flex min-h-screen w-full flex-col bg-white lg:flex-row;
+  @apply flex min-h-screen w-full flex-col bg-[#0D1117] lg:flex-row;
 }
 
 .root-container {
-  @apply mt-16 flex-1 overflow-auto py-8 lg:mt-0 lg:max-h-screen lg:py-10
+  @apply mt-10 flex-1 overflow-auto py-8 lg:mt-0 lg:max-h-screen
 }
 
 /* ========================================== TAILWIND STYLES */
 @layer utilities {
   /* ===== UTILITIES */
   .wrapper {
-    @apply max-w-5xl mx-auto px-5 md:px-10 w-full text-dark-400 p-16-regular;
+    @apply max-w-5xl mx-auto px-5 pt-5 lg:pt-0 w-full text-dark-400 p-16-regular;
   }
 
   .gradient-text {
@@ -167,31 +167,31 @@
 
   /* =====  SHADCN OVERRIDES */
   .button {
-    @apply py-4 px-6 flex-center gap-3 rounded-full p-16-semibold focus-visible:ring-offset-0 focus-visible:ring-transparent !important;
+    @apply py-4 px-6 flex-center gap-3 rounded-md p-16-semibold focus-visible:ring-offset-0 focus-visible:ring-transparent !important;
   }
 
   .dropdown-content {
-    @apply shadow-lg rounded-md overflow-hidden p-0;
+    @apply shadow-xl rounded-md overflow-hidden p-0;
   }
 
   .dropdown-item {
-    @apply p-16-semibold text-dark-700 cursor-pointer transition-all px-4 py-3 rounded-none outline-none hover:border-none focus-visible:ring-transparent hover:text-white hover:bg-purple-gradient hover:bg-cover focus-visible:ring-offset-0 focus-visible:outline-none !important;
+    @apply p-16-semibold text-white cursor-pointer transition-all px-4 py-3 rounded-none outline-none hover:border-none focus-visible:ring-transparent hover:text-white hover:bg-purple-gradient hover:bg-cover focus-visible:ring-offset-0 focus-visible:outline-none !important;
   }
 
   .input-field {
-    @apply rounded-[16px] border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 text-dark-600 disabled:opacity-100 p-16-semibold h-[50px] md:h-[54px] focus-visible:ring-offset-0 px-4 py-3 focus-visible:ring-transparent !important;
+    @apply bg-[#111827] rounded-md border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 text-white disabled:opacity-100 p-16-semibold h-[50px] md:h-[54px] focus-visible:ring-offset-0 px-4 py-3 focus-visible:ring-transparent !important;
   }
 
   .search-field {
-    @apply border-0 bg-transparent text-dark-600 w-full placeholder:text-dark-400 h-[50px] p-16-medium focus-visible:ring-offset-0 p-3 focus-visible:ring-transparent !important;
+    @apply border-0 bg-[#111827] text-white w-full placeholder:text-dark-400 h-[50px] p-16-medium focus-visible:ring-offset-0 p-3 focus-visible:ring-transparent !important;
   }
 
   .submit-button {
-    @apply bg-purple-gradient bg-cover rounded-full py-4 px-6 p-16-semibold h-[50px] w-full md:h-[54px];
+    @apply bg-cover rounded-md py-4 px-6 p-16-semibold h-[50px] w-full md:h-[54px];
   }
 
   .select-field {
-    @apply w-full border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 rounded-[16px] h-[50px] md:h-[54px] text-dark-600 p-16-semibold disabled:opacity-100 placeholder:text-dark-400/50 px-4 py-3 focus:ring-offset-0 focus-visible:ring-transparent focus:ring-transparent focus-visible:ring-0 focus-visible:outline-none !important;
+    @apply w-full bg-[#111827] border-2 border-purple-200/20 shadow-sm shadow-purple-200/15 rounded-md h-[50px] md:h-[54px] text-white p-16-semibold disabled:opacity-100 placeholder:text-dark-400/50 px-4 py-3 focus:ring-offset-0 focus-visible:ring-transparent focus:ring-transparent focus-visible:ring-0 focus-visible:outline-none !important;
   }
 
   .select-trigger {
@@ -199,7 +199,7 @@
   }
 
   .select-item {
-    @apply py-3 cursor-pointer hover:bg-purple-100;
+    @apply py-3 cursor-pointer hover:bg-gray-700;
   }
 
   .IconButton {
@@ -220,11 +220,11 @@
 
   /* Home Page */
   .home {
-    @apply sm:flex-center hidden h-72 flex-col gap-4 rounded-[20px] border bg-banner bg-cover bg-no-repeat p-10 shadow-inner;
+    @apply sm:flex-center hidden h-72 flex-col gap-4 rounded-[20px] border bg-banner bg-cover bg-no-repeat shadow-inner;
   }
 
   .home-heading {
-    @apply h1-semibold max-w-[500px] flex-wrap text-center text-white shadow-sm;
+    @apply h1-semibold flex-wrap text-center text-[#2A8A3C] shadow-sm mb-2;
   }
 
   /* Credits Page */
@@ -233,11 +233,11 @@
   }
 
   .credits-item {
-    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-8 shadow-xl shadow-purple-200/20 lg:max-w-none;
+    @apply w-full rounded-[16px] border-2 border-gray-200/20 bg-gray-900 p-8 shadow-lg shadow-gray-200/20 lg:max-w-none;
   }
 
   .credits-btn {
-    @apply w-full rounded-full bg-purple-100 bg-cover text-purple-500 hover:text-purple-500;
+    @apply w-full rounded-md bg-[#161B22] bg-cover text-white hover:text-gray-500;
   }
 
   /* Profile Page */
@@ -246,20 +246,20 @@
   }
 
   .profile-balance {
-    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-5 shadow-lg shadow-purple-200/10 md:px-6 md:py-8;
+    @apply w-full rounded-[16px] border-2 border-gray-200/20 bg-gray-900 p-5 shadow-lg shadow-gray-200/10 md:px-6 md:py-8;
   }
 
   .profile-image-manipulation {
-    @apply w-full rounded-[16px] border-2 border-purple-200/20 bg-white p-5 shadow-lg shadow-purple-200/10 md:px-6 md:py-8;
+    @apply w-full rounded-[16px] border-2 border-gray-200/20 bg-gray-900 p-5 shadow-lg shadow-gray-200/10 md:px-6 md:py-8;
   }
 
   /* Transformation Details */
   .transformation-grid {
-    @apply grid h-fit min-h-[200px] grid-cols-1 gap-5 py-8 md:grid-cols-2;
+    @apply grid h-fit min-h-[200px] grid-cols-1 gap-5 md:grid-cols-2;
   }
 
   .transformation-original_image {
-    @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-purple-100/20 object-cover p-2;
+    @apply h-fit min-h-72 w-full rounded-[10px] border border-dashed bg-gray-100/20 object-cover p-2;
   }
 
   /* Collection Component */
@@ -280,7 +280,7 @@
   }
 
   .collection-card {
-    @apply flex flex-1 cursor-pointer flex-col gap-5 rounded-[16px] border-2 border-purple-200/15 bg-white p-4 shadow-xl shadow-purple-200/10 transition-all hover:shadow-purple-200/20;
+    @apply flex flex-1 cursor-pointer flex-col gap-5 rounded-md border-2 border-purple-200/15 bg-[#0D1117] p-4 shadow-lg shadow-purple-200/10 transition-all hover:shadow-purple-200/20;
   }
 
   /* MediaUploader Component */
@@ -293,12 +293,12 @@
   }
 
   .media-uploader_cta-image {
-    @apply rounded-[16px] bg-white  p-5 shadow-sm shadow-purple-200/50;
+    @apply rounded-[16px] bg-[#0D1117]  p-5 shadow-sm shadow-purple-200/50;
   }
 
   /* Navbar Component */
   .header {
-    @apply flex-between fixed h-16 w-full border-b-4 border-purple-100 bg-white p-5 lg:hidden;
+    @apply flex-between fixed h-16 w-full border-b-4 border-gray-100 bg-[#0D1117] p-5 lg:hidden;
   }
 
   .header-nav_elements {
@@ -307,12 +307,12 @@
 
   /* Search Component */
   .search {
-    @apply flex w-full rounded-[16px] border-2 border-purple-200/20 bg-white px-4 shadow-sm shadow-purple-200/15 md:max-w-96;
+    @apply flex w-full rounded-[16px] border-2 border-purple-200/20 bg-[#111827] px-4 shadow-sm shadow-purple-200/15 md:max-w-96;
   }
 
   /* Sidebar Component */
   .sidebar {
-    @apply hidden h-screen w-72 bg-white p-5 shadow-md shadow-purple-200/50 lg:flex;
+    @apply hidden h-screen w-72 bg-[#161B22] p-5 shadow-md shadow-purple-200/50 lg:flex;
   }
 
   .sidebar-logo {
@@ -328,7 +328,7 @@
   }
 
   .sidebar-nav_element {
-    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-full bg-cover  transition-all hover:bg-purple-100 hover:shadow-inner;
+    @apply flex-center p-16-semibold w-full whitespace-nowrap rounded-md bg-cover  transition-all hover:bg-gray-700 hover:shadow-inner;
   }
 
   .sidebar-link {
@@ -346,7 +346,7 @@
 
   /* TransformedImage Component */
   .download-btn {
-    @apply p-14-medium mt-2 flex items-center gap-2 px-2;
+    @apply p-14-medium mt-2 flex items-center gap-2 px-2 hover:brightness-150;
   }
 
   .transformed-image {

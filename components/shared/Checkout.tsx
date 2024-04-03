@@ -64,7 +64,7 @@ const Checkout = ({
         <Button
           type="submit"
           role="link"
-          className="w-full rounded-full bg-purple-gradient bg-cover"
+          className="w-full rounded-md bg-[#238636] bg-cover hover:bg-gray-100 hover:text-gray-700"
         >
           Buy Credit
         </Button>

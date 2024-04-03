@@ -13,9 +13,14 @@ const Sidebar = () => {
   return (
     <aside className="sidebar">
       <div className="flex size-full flex-col gap-4">
-        <Link href="/" className="sidebar-logo mx-auto">
-          <Image src="/assets/images/brand.svg" alt="logo" width={180} height={28} />
-        </Link>
+        <div className="flex gap-2">
+          <li className="flex-center cursor-pointer p-2">
+            <UserButton afterSignOutUrl='/'  />
+          </li>
+          <Link href="/" className="sidebar-logo">
+            <Image src="/assets/images/brand.svg" alt="logo" width={180} height={28} />
+          </Link>
+        </div>
 
         <nav className="sidebar-nav">
           <SignedIn>
@@ -25,7 +30,7 @@ const Sidebar = () => {
 
                 return (
                   <li key={link.route} className={`sidebar-nav_element group ${
-                    isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'
+                    isActive ? 'bg-purple-gradient text-white' : 'text-gray-500'
                   }`}>
                     <Link className="sidebar-link" href={link.route}>
                       <Image 
@@ -49,7 +54,7 @@ const Sidebar = () => {
 
                 return (
                   <li key={link.route} className={`sidebar-nav_element group ${
-                    isActive ? 'bg-purple-gradient text-white' : 'text-gray-700'
+                    isActive ? 'bg-purple-gradient text-white' : 'text-gray-500'
                   }`}>
                     <Link className="sidebar-link" href={link.route}>
                       <Image 
@@ -65,14 +70,12 @@ const Sidebar = () => {
                 )
               })}
 
-              <li className="flex-center cursor-pointer gap-2 p-4">
-                <UserButton afterSignOutUrl='/' showName />
-              </li>
+              
             </ul>
           </SignedIn>
 
           <SignedOut>
-            <Button asChild className="button bg-purple-gradient bg-cover">
+            <Button asChild className="button bg-purple-gradient bg-cover hover:brightness-150">
               <Link href="/sign-in">Login</Link>
             </Button>
           </SignedOut>
