@@ -43,9 +43,10 @@ const MobileNav = () => {
                   alt="logo"
                   width={152}
                   height={23}
+                  className="cursor-pointer mx-auto"
                 />
 
-                <ul className="header-nav_elements">
+                <ul className="flex flex-col mt-4">
                   {navLinks.map((link) => {
                     const isActive = link.route === pathname
 
@@ -54,7 +55,7 @@ const MobileNav = () => {
                         className={`${isActive ? 'text-white' : 'text-gray-500'} flex whitespace-nowrap`}
                         key={link.route}
                         >
-                        <Link className="sidebar-link cursor-pointer" href={link.route}>
+                        <Link className="sidebar-link cursor-pointer hover:bg-dark-700 rounded-md" href={link.route}>
                           <Image 
                             src={link.icon}
                             alt="logo"
