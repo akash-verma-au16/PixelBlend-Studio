@@ -1,12 +1,12 @@
 ## <a name="introduction">🤖 Introduction</a>
 
-Welcome to PixelBlend Studio!! 
+**Welcome to PixelBlend Studio!!** 
 - Image generation, manipulation and more, powered by Cloudinary AI.
 - Authentication and User management with Clerk webhooks.
 - Payment support with Stripe (in test mode).
 - Database management with MongoDB.
 - Styled UI components with Shadcn.
-- [Production: Deployed on Vercel] (https://pixel-blend-studio.vercel.app/)
+- [Production: Deployed on Vercel](https://pixel-blend-studio.vercel.app/)
 
 
 ## <a name="tech-stack">⚙️ Tech Stack</a>
