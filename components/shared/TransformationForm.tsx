@@ -193,7 +193,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
             name="title"
             formLabel="Image Title"
             className="w-full"
-            render={({ field }) => <Input {...field} className="input-field" placeholder="Create title"/>}
+            render={({ field }) => <Input {...field} className="input-field" placeholder="Create title" required/>}
           />
 
           {type === 'fill' && (
@@ -206,6 +206,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
                 <Select
                   onValueChange={(value) => onSelectFieldHandler(value, field.onChange)}
                   value={field.value}
+                  required
                 >
                   <SelectTrigger className="select-field">
                     <SelectValue placeholder="Select size" />
@@ -236,6 +237,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
                     value={field.value}
                     className="input-field"
                     placeholder="Name of object"
+                    required
                     onChange={(e) => onInputChangeHandler(
                       'prompt',
                       e.target.value,
@@ -257,6 +259,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
                       value={field.value}
                       className="input-field"
                       placeholder="Color"
+                      required
                       onChange={(e) => onInputChangeHandler(
                         'color',
                         e.target.value,
@@ -309,7 +312,7 @@ const TransformationForm = ({ action, data = null, userId, type, creditBalance, 
           <Button 
             type="submit"
             className="submit-button capitalize bg-[#24BA73]"
-            disabled={isSubmitting || image?.publicId === ""}
+            disabled={isSubmitting || form.getValues('publicId') === ""}
           >
             {isSubmitting ? 'Submitting...' : 'Save Image'}
           </Button>
